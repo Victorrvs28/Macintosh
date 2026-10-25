@@ -5,20 +5,30 @@
 
 typedef enum TokenType
 {
+    TOKEN_INT_TYPE,
+    TOKEN_VARIABLE_PREFIX,
+    TOKEN_IDENTIFIER,
+    TOKEN_ASSIGN,
+    TOKEN_INTEGER_LITERAL,
+    TOKEN_SEMICOLON,
+    TOKEN_EOF,
+    TOKEN_INVALID
 } TokenType;
 
 typedef struct Token
 {
     TokenType type;
-    const char *value;
+    char *value;
     uint32_t line;
     uint32_t column;
+    uint32_t start;
+    uint32_t end;
 } Token;
 
 typedef struct Lexer
 {
     const char *source;
-    char *current_char;
+    char current_char;
     uint32_t position;
     uint32_t line;
     uint32_t column;
