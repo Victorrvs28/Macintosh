@@ -5,6 +5,11 @@
 
 int main()
 {
-  Parse();
+  const char* code =    
+        "int $contador := 42;\n"
+        "\n"
+        "int $x := 12;\n"
+        "int $counter := 12;\n";
+  Parse(code);
     return EXIT_SUCCESS;
 }

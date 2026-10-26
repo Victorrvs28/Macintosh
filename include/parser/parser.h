@@ -1,2 +1,2 @@
 #pragma once
-int Parse();
+int Parse(const char *code);
