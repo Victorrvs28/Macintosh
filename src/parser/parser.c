@@ -33,10 +33,5 @@ loop:
         goto loop;
     }
    #include "inc/vardeclare|assign/inc.inc"
-    else {
-        printf("\033[31mError on line %d: '%s' is not a valid word.\033[0m\n",
-               token->line, token->value ? token->value : "end of file");
-        lexer_free_token(token);
-        return 1;
-    }
+
 }

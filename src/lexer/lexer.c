@@ -28,7 +28,7 @@ static void lexer_advance(Lexer *lexer)
 
 static void lexer_skip_whitespace(Lexer *lexer)
 {
-    while (isspace((unsigned char)lexer->current_char))
+    while (isspace((unsigned char)lexer->current_char) && lexer->current_char != '\n')
     {
         lexer_advance(lexer);
     }
@@ -121,7 +121,7 @@ Token *lexer_next_token(Lexer *lexer)
 {
     while (lexer->current_char != '\0')
     {
-        if (isspace((unsigned char)lexer->current_char))
+        if (isspace((unsigned char)lexer->current_char) && lexer->current_char != '\n')
         {
             lexer_skip_whitespace(lexer);
             continue;
@@ -137,25 +137,21 @@ Token *lexer_next_token(Lexer *lexer)
             return lexer_get_number(lexer);
         }
 
-        if (lexer->current_char == ':' && lexer->source[lexer->position + 1] == '=')
+            if (lexer->current_char == '=')
         {
             Token *token = lexer_create_token(lexer, TOKEN_ASSIGN);
             if (token == NULL)
                 return NULL;
             lexer_advance(lexer);
-            lexer_advance(lexer);
             token->end = lexer->position;
-            token->value = lexer_strdup_range(lexer->source, token->start, 2);
+            token->value = lexer_strdup_range(lexer->source, token->start, 1);
             return token;
         }
 
         TokenType type;
         switch (lexer->current_char)
         {
-        case '$':
-            type = TOKEN_VARIABLE_PREFIX;
-            break;
-        case ';':
+        case '\n':
             type = TOKEN_SEMICOLON;
             break;
         default:
