@@ -34,5 +34,3 @@ if (token->type != TOKEN_SEMICOLON) {
     lexer_free_token(token);
     return 1;
 }
-lexer_free_token(token);
-goto loop;

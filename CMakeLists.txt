@@ -7,12 +7,13 @@ project(Macintosh
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF) 
+set(CMAKE_C_EXTENSIONS OFF)
 
 set(SOURCES
     src/main.c
     src/lexer/lexer.c
     src/parser/parser.c
+    src/transpiler/transpiler.c
 )
 
 add_executable(macintosh ${SOURCES})

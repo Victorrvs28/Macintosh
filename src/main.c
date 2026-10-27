@@ -5,11 +5,11 @@
 
 int main()
 {
-  const char* code =    
+  const char* code =
         "contador = 42\n"
         "\n"
         "x = 12\n"
         "counter = 12\n";
-  Parse(code);
-    return EXIT_SUCCESS;
+  int returncode = Parse(code);
+    return returncode;
 }

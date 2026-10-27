@@ -33,5 +33,6 @@ loop:
         goto loop;
     }
    #include "inc/vardeclare|assign/inc.inc"
-
+    lexer_free_token(token);
+    goto loop;
 }
