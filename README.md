@@ -1,6 +1,6 @@
-# Macintosh
+# Pish
 
-Macintosh is a small Python interpreter that transpiles to **bash** and **batch**.
+pish is a small Python interpreter that transpiles to **bash** and **batch**.
 Write your automation once and run it on Linux, macOS and Windows,
 with no interpreter to install on the target machine.
 
