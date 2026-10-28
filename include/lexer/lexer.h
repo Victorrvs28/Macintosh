@@ -1,6 +1,10 @@
 #ifndef LEXER_H
 #define LEXER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 typedef enum TokenType
@@ -38,4 +42,8 @@ void lexer_init(Lexer *lexer, const char *source);
 Token *lexer_next_token(Lexer *lexer);
 void lexer_free_token(Token *token);
 
-#endif // LEXER_H
+#ifdef __cplusplus
+}
+#endif
+
+#endif
