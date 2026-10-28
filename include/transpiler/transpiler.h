@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-#pragma once
-int transpile(const char* code);
-=======
 #ifndef TRANSPILER_H
 #define TRANSPILER_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 
 int transpileToBash(const char *filename);
 
@@ -16,4 +13,3 @@ int transpileToBash(const char *filename);
 #endif
 
 #endif
->>>>>>> add-transpiler
