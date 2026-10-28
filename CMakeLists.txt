@@ -1,20 +1,25 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Macintosh
+project(pish
     VERSION 1.0.0
-    LANGUAGES C
+    LANGUAGES C CXX
 )
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 set(SOURCES
+    src/transpiler/transpiler.cpp
     src/main.c
     src/lexer/lexer.c
     src/parser/parser.c
-    src/transpiler/transpiler.c
+    src/transpiler/transpiler.cpp
 )
 
-add_executable(macintosh ${SOURCES})
-target_include_directories(macintosh PRIVATE include)
+add_executable(pish ${SOURCES})
+target_include_directories(pish PRIVATE include)

@@ -18,7 +18,7 @@ Macintosh generates plain `.sh` / `.bat` scripts that already run everywhere.
 ## Build
 
     cmake -B build && cmake --build build
-    ./build/macintosh
+    ./build/pish
 
 ## Roadmap
 
