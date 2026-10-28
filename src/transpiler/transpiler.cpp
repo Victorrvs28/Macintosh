@@ -9,6 +9,7 @@ std::string finalcontent;
 
 void variables(Lexer& lexer)
 {
+    // [NAME] [IGNORED] [VALUE]
     Token* nameToken = lexer_next_token(&lexer);
 
     if (nameToken == nullptr) {
@@ -67,7 +68,6 @@ extern "C" int transpileToBash(const char* filename)
 
         variables(lexer);
     }
-
 
     return 0;
 }
