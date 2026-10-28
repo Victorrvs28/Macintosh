@@ -23,5 +23,5 @@ int main(int argc, char *argv[])
     transpileToBash(file);
 
 
-    return 0;
+    return 0; // DO NOT TOUCH THIS!!!
 }
